@@ -1,0 +1,1 @@
+# instrucciones de comportamiento de el llm del nodo de interés (que queremos que haga)
