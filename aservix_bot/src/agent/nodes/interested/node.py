@@ -1,0 +1,1 @@
+#Acá va a estar el cerebro del agente del nodo de interes, es decir el llm 
