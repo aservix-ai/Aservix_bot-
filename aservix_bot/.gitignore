@@ -1,0 +1,4 @@
+*.env
+.venv/
+aservix_bot.egg-info/
+__pycache__/

@@ -1,1 +1,7 @@
-// Configuración de langgraph para el agente
+{
+    "dependencies": ["."],
+    "graphs": {
+        "agent": "./src/agent/agent.py:make_graph"
+    },
+    "env": ".env"
+}
