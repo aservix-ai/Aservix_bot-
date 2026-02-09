@@ -1,8 +1,8 @@
-# Here we define the state of the agent
-from typing import Annotated, TypedDict
-
+from typing import Annotated, Sequence
+from typing_extensions import TypedDict
+from langchain_core.messages import BaseMessage
 from langgraph.graph.message import add_messages
 
-
 class AgentState(TypedDict):
-    messages: Annotated[list, add_messages]
+    # La anotación add_messages es la que permite que el historial crezca
+    messages: Annotated[Sequence[BaseMessage], add_messages]

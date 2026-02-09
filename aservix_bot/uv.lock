@@ -36,7 +36,7 @@ dependencies = [
     { name = "pydantic" },
 ]
 
-[package.optional-dependencies]
+[package.dev-dependencies]
 dev = [
     { name = "langgraph-cli", extra = ["inmem"] },
 ]
@@ -48,10 +48,11 @@ requires-dist = [
     { name = "langchain-openai" },
     { name = "langgraph" },
     { name = "langgraph-checkpoint-postgres" },
-    { name = "langgraph-cli", extras = ["inmem"], marker = "extra == 'dev'" },
     { name = "pydantic" },
 ]
-provides-extras = ["dev"]
+
+[package.metadata.requires-dev]
+dev = [{ name = "langgraph-cli", extras = ["inmem"], specifier = ">=0.4.12" }]
 
 [[package]]
 name = "blockbuster"

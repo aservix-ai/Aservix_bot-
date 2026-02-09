@@ -4,6 +4,3 @@ langchain-core
 langchain-openai
 pydantic
 langgraph-checkpoint-postgres
-
-[dev]
-langgraph-cli[inmem]

@@ -10,8 +10,6 @@ Requires-Dist: langchain-core
 Requires-Dist: langchain-openai
 Requires-Dist: pydantic
 Requires-Dist: langgraph-checkpoint-postgres
-Provides-Extra: dev
-Requires-Dist: langgraph-cli[inmem]; extra == "dev"
 
 pip python3 -> UV entono de ejecucion y paquetes 
 

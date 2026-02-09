@@ -2,6 +2,8 @@ README.md
 pyproject.toml
 src/__init__.py
 src/agent/__init__.py
+src/agent/agent.py
+src/agent/state.py
 src/agent/nodes/__init__.py
 src/agent/nodes/conversation/__init__.py
 src/agent/nodes/conversation/node.py
