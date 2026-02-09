@@ -5,23 +5,22 @@ from src.agent.nodes.conversation.node import conversation_node
 # 1. Configuración del Grafo
 workflow = StateGraph(AgentState)
 
-# 2. Añadir el nodo que ya definimos
-# El nombre "conversation" es el identificador del nodo
-workflow.add_node("conversation", conversation_node)
+# Añadir el nodo del node.py
+# "conversacion" -> identificador del nodo
+workflow.add_node("conversacion", conversation_node)
 
-# 3. Definir las conexiones (Aristas/Edges)
-workflow.add_edge(START, "conversation")
-workflow.add_edge("conversation", END)
+# conexiones 
+workflow.add_edge(START, "conversacion")
+workflow.add_edge("conversacion", END)
 
-# 4. Compilar el grafo
-# Esto crea un ejecutable que mantiene el estado de la conversación
+# Compilar el grafo
 app = workflow.compile()
 
 def chat():
-    print("\n--- Aservix Bot (Modo Terminal) ---")
+    print("\n--- Aservix Bot ---")
     print("Escribe 'salir' para finalizar la sesión.\n")
     
-    # Aquí guardaremos el historial de la sesión actual
+    # historial de la secion actual
     thread = {"configurable": {"thread_id": "1"}}
     state = {"messages": []}
 
@@ -32,8 +31,8 @@ def chat():
             print(" Bot: ¡Hasta luego!")
             break
 
-        # Ejecutar el grafo con la entrada del usuario
-        # Usamos stream para poder ver el proceso paso a paso si quisiéramos
+        # Ejecutar el grafo 
+        # stream -> ver el proceso paso a paso si es necesario
         events = app.stream(
             {"messages": [("user", user_input)]}, 
             thread, 
@@ -41,10 +40,10 @@ def chat():
         )
 
         for event in events:
-            # Buscamos el último mensaje generado en el estado
+            # el último mensaje generado en el estado
             if "messages" in event:
                 last_message = event["messages"][-1]
-                # Solo imprimimos si el mensaje es del bot (AI)
+                # Solo imprimimos si es Ai
                 if last_message.type == "ai":
                     print(f" Bot: {last_message.content}\n")
 
